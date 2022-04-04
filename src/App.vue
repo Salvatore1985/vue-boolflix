@@ -48,20 +48,9 @@ export default {
       if (!query) this.moviesList = [];
 
       //*search/movie? da cambiare e renderlo dinamico per la ricerca seri
-      /*   axios
-        .get(
-          `${this.api.basaUri}search/movie?${this.api.key_api}&query=${query}`
-        )
-        .then((result) => {
-          this.moviesList = result.data.results;
-          console.log("array film dalla chiamata", result.data.results);
-        })
-        .catch((error) => {
-          console.log(error);
-        }); */
       axios
         .get(
-          `https://api.themoviedb.org/3/search/movie?api_key=12dd05e7d86d7822ce2c8e30b16accee&query=${query}`
+          `${this.api.basaUri}search/movie?api_key=${this.api.key_api}&query=${query}`
         )
         .then((result) => {
           this.moviesList = result.data.results;
@@ -69,6 +58,12 @@ export default {
         })
         .catch((error) => {
           console.log(error);
+          console.log(this.api.basaUri);
+          console.log(this.api.key_api);
+          console.log(query);
+          console.log(
+            `${this.api.basaUri}search/movie?${this.api.key_api}&query=${query}`
+          );
         });
     },
   },

@@ -27,26 +27,9 @@ export default {
     "movieVote_average",
   ],
   data() {
-    return {
-      listFilm: [],
-      apiList:
-        "https://api.themoviedb.org/3/search/movie?api_key=12dd05e7d86d7822ce2c8e30b16accee&query",
-      searchFilm: "ritorno",
-    };
+    return {};
   },
-  created() {
-    /*  axios
-      .get(`${this.apiList}=${this.searchFilm}`)
-      .then((result) => {
-        this.listFilm = result.data;
-        console.log("questa e la lista dei film ", this.listFilm);
-        //const resultFilm = result.data;
-        //.log(resultFilm);
-      })
-      .catch((error) => {
-        console.log(error);
-      }); */
-  },
+  created() {},
   methods: {},
   computed: {},
 };
