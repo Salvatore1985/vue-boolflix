@@ -9,3 +9,11 @@ li {
 a {
     text-decoration: none;
 }
+
+
+img.my-cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}

@@ -1,21 +1,33 @@
 <template>
-  <section class="p-3">
-    <ul>
-      <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
-      <li><span class="text-danger">Titolo Originale: </span>{{ tvTitle }}</li>
-      <li v-if="tvOriginal_language !== 'en'">
-        <span class="text-danger">Lingua: </span>
-        <img
-          :src="`https://flagcdn.com/24x18/${tvOriginal_language}.png`"
-          :alt="tvOriginal_title"
-        />
-      </li>
-      <li v-else>
-        <span class="text-danger">Lingua: </span>
-        <span class="text-uppercase"> {{ tvOriginal_language }} </span>
-      </li>
-      <li><span class="text-danger">Voto: </span>{{ tvVote_average }}</li>
-    </ul>
+  <section>
+    <div class="h-25">
+      <img
+        class="my-cover"
+        :src="`https://image.tmdb.org/t/p/w342${tvCover}`"
+        :alt="tvTitle"
+      />
+    </div>
+    <div class="h-75 overflow-auto">
+      <ul>
+        <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
+        <li>
+          <span class="text-danger">Titolo Originale: </span>{{ tvTitle }}
+        </li>
+        <li v-if="tvOriginal_language !== 'en'">
+          <span class="text-danger">Lingua: </span>
+          <img
+            :src="`https://flagcdn.com/24x18/${tvOriginal_language}.png`"
+            :alt="tvOriginal_title"
+          />
+        </li>
+        <li v-else>
+          <span class="text-danger">Lingua: </span>
+          <span class="text-uppercase"> {{ tvOriginal_language }} </span>
+        </li>
+        <li><span class="text-danger">Voto: </span>{{ tvVote_average }}</li>
+        <li><span class="text-danger">Descrizione: </span>{{ tvOverview }}</li>
+      </ul>
+    </div>
   </section>
 </template> 
 
@@ -27,6 +39,8 @@ export default {
     "tvOriginal_title",
     "tvOriginal_language",
     "tvVote_average",
+    "tvCover",
+    "tvOverview",
   ],
   data() {
     return {};
@@ -42,7 +56,7 @@ export default {
 @import "../components/style/main-style.scss";
 section {
   background-color: $color_cards;
-  width: calc(100% / 6);
+  width: calc(100% / $nDivision_cards);
   height: 500px;
   border: 1px solid $brand_secondary;
 }

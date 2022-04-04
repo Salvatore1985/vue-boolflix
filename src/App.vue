@@ -19,6 +19,8 @@
                 :movieOriginal_title="movie.original_title"
                 :movieOriginal_language="movie.original_language"
                 :movieVote_average="movie.vote_average"
+                :movieCover="movie.backdrop_path"
+                :movieOverview="movie.overview"
               />
             </div>
             <div class="col-12">
@@ -26,7 +28,9 @@
                 Serie Tv
               </h2>
             </div>
-            <div class="col-12 text-white d-flex flex-wrap">
+            <div
+              class="col-12 text-white d-flex flex-wrap justify-content-center"
+            >
               <MainTv
                 v-for="tv in tvList"
                 :key="tv.id"
@@ -34,6 +38,8 @@
                 :tvOriginal_title="tv.original_name"
                 :tvOriginal_language="tv.original_language"
                 :tvVote_average="tv.vote_average"
+                :tvCover="tv.backdrop_path"
+                :tvOverview="tv.overview"
               />
             </div>
           </div>
@@ -63,6 +69,7 @@ export default {
       api: {
         basaUri: "https://api.themoviedb.org/3/",
         key_api: "12dd05e7d86d7822ce2c8e30b16accee",
+        imgHttps: "https://image.tmdb.org/t/p",
       },
     };
   },
