@@ -1,7 +1,7 @@
 <template>
   <section class="p-3">
     <ul>
-      <li><span class="text-danger">Tittolo: </span></li>
+      <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
       <li><span class="text-danger">Titolo Originale: </span>{{ tvTitle }}</li>
       <li v-if="tvOriginal_language !== 'en'">
         <span class="text-danger">Lingua: </span>

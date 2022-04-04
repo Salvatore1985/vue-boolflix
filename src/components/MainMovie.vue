@@ -1,7 +1,7 @@
 <template>
   <section class="p-3">
     <ul>
-      <li><span class="text-danger">Tittolo: </span></li>
+      <li><span class="text-danger">Tittolo: </span>{{ movieTitle }}</li>
       <li>
         <span class="text-danger">Titolo Originale: </span
         >{{ movieOriginal_title }}

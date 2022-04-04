@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @search="getMovies" />
+    <Header @search="search" />
     <main class="overflow-auto">
       <!--  <div @click="getFlags" class="text-center text-danger text-uppercase">
         prova
@@ -114,6 +114,10 @@ export default {
             `${this.api.basaUri}search/tv?${this.api.key_api}&query=${query}`
           );
         });
+    },
+    search(query) {
+      this.getMovies(query);
+      this.getTv(query);
     },
 
     getFlags() {
