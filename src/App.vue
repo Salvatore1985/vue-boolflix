@@ -2,8 +2,11 @@
   <div id="app">
     <Header @search="getMovies" />
     <main class="overflow-auto">
+      <div @click="getFlags" class="text-center text-danger text-uppercase">
+        prova
+      </div>
       <section>
-        <div class="container p-5">
+        <div class="container-fluid p-5">
           <div class="row">
             <div class="col-12 text-white d-flex flex-wrap">
               <Main
@@ -11,7 +14,7 @@
                 :key="movie.id"
                 :movieTitle="movie.title"
                 :movieOriginal_title="movie.original_title"
-                :movieOriginal_languagee="movie.original_language"
+                :movieOriginal_language="movie.original_language"
                 :movieVote_average="movie.vote_average"
               />
             </div>
@@ -34,6 +37,7 @@ export default {
   },
   data() {
     return {
+      flags: [],
       moviesList: [],
       api: {
         basaUri: "https://api.themoviedb.org/3/",
@@ -55,6 +59,7 @@ export default {
         .then((result) => {
           this.moviesList = result.data.results;
           console.log("array film dalla chiamata", result.data.results);
+          console.log("array completo ", this.moviesList);
         })
         .catch((error) => {
           console.log(error);
@@ -65,6 +70,18 @@ export default {
             `${this.api.basaUri}search/movie?${this.api.key_api}&query=${query}`
           );
         });
+    },
+
+    getFlags() {
+      this.moviesList.forEach((element) => {
+        const flag = element.original_language;
+        if (!this.flags.includes(flag)) {
+          this.flags.push(element.original_language);
+        } else {
+          console.log("E gia incluso nell' array");
+        }
+      });
+      console.log("array", this.flags);
     },
   },
   computed: {},
