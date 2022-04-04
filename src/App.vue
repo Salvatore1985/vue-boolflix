@@ -1,14 +1,23 @@
 <template>
   <div id="app">
     <Header @search="getMovies" />
-    <main>
-      <Main />
-      <ul v-for="(movie, index) in moviesList" :key="index">
-        <li>{{ movie.title }}</li>
-        <li>{{ movie.original_title }}</li>
-        <li>{{ movie.original_language }}</li>
-        <li>{{ movie.vote_average }}</li>
-      </ul>
+    <main class="overflow-auto">
+      <section>
+        <div class="container p-5">
+          <div class="row">
+            <div class="col-12 text-white d-flex flex-wrap">
+              <Main
+                v-for="movie in moviesList"
+                :key="movie.id"
+                :movieTitle="movie.title"
+                :movieOriginal_title="movie.original_title"
+                :movieOriginal_languagee="movie.original_language"
+                :movieVote_average="movie.vote_average"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -39,12 +48,13 @@ export default {
       if (!query) this.moviesList = [];
 
       //*search/movie? da cambiare e renderlo dinamico per la ricerca seri
-      /*  axios
+      /*   axios
         .get(
           `${this.api.basaUri}search/movie?${this.api.key_api}&query=${query}`
         )
         .then((result) => {
           this.moviesList = result.data.results;
+          console.log("array film dalla chiamata", result.data.results);
         })
         .catch((error) => {
           console.log(error);
@@ -55,7 +65,7 @@ export default {
         )
         .then((result) => {
           this.moviesList = result.data.results;
-          console.log("array film dalla chiamata", this.moviesList.data);
+          console.log("array film dalla chiamata", result.data.results);
         })
         .catch((error) => {
           console.log(error);
@@ -68,4 +78,8 @@ export default {
 
 <style lang="scss">
 @import "./components/style/main-style.scss";
+main {
+  height: calc($main_home - $header_home);
+  background-color: $brand_secondary;
+}
 </style>

@@ -1,23 +1,31 @@
 <template>
-  <main class="overflow-auto">
-    <div class="container p-5">
-      <div class="row">
-        <!-- <div class="col-12 text-danger">{{ searchAll }}</div> -->
-        <div class="col-12 text-white">
-          <!--     <ul v-for="(list, index) in listFilm" :key="index">
-            <li>{{ listFilm }}</li>
-          </ul> -->
-        </div>
-      </div>
-    </div>
-  </main>
+  <section class="p-5">
+    <!-- <div class="col-12 text-white"> -->
+    <ul>
+      <li><span class="text-danger">Tittolo: </span> {{ movieTitle }}</li>
+      <li>
+        <span class="text-danger">Titolo Originale: </span
+        >{{ movieOriginal_title }}
+      </li>
+      <li>
+        <span class="text-danger">Lingua: </span>{{ movieOriginal_languagee }}
+      </li>
+      <li><span class="text-danger">Voto: </span>{{ movieVote_average }}</li>
+    </ul>
+    <!--   </div> -->
+  </section>
 </template> 
 
 <script>
 /* import axios from "axios"; */
 export default {
   name: "HomeMain",
-
+  props: [
+    "movieTitle",
+    "movieOriginal_title",
+    "movieOriginal_languagee",
+    "movieVote_average",
+  ],
   data() {
     return {
       listFilm: [],
@@ -45,10 +53,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "../components/style/main-style.scss";
-main {
-  height: calc($main_home - $header_home);
-  background-color: $brand_secondary;
-}
 </style>
