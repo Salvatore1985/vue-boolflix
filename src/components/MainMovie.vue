@@ -1,6 +1,5 @@
 <template>
   <section class="p-3">
-    <!-- <div class="col-12 text-white"> -->
     <ul>
       <li><span class="text-danger">Tittolo: </span></li>
       <li>
@@ -16,19 +15,14 @@
       </li>
       <li v-else>
         <span class="text-danger">Lingua: </span>
-        <span> {{ movieOriginal_language }} </span>
+        <span class="text-uppercase"> {{ movieOriginal_language }} </span>
       </li>
       <li><span class="text-danger">Voto: </span>{{ movieVote_average }}</li>
     </ul>
-    <!--   </div> -->
   </section>
 </template> 
 
 <script>
-/* import axios from "axios"; */
-/* https://flagcdn.com
-/en
-/codes.json */
 export default {
   name: "HomeMain",
   props: [
@@ -43,13 +37,7 @@ export default {
     };
   },
   created() {},
-  methods: {
-    /*   getFlags() {
-      this.flags.push(this.movieOriginal_languagee);
-      console.log("array bandiere", this.flags);
-      return this.flags;
-    }, */
-  },
+  methods: {},
   computed: {},
 };
 </script>
