@@ -5,12 +5,12 @@
       <!--  <div @click="getFlags" class="text-center text-danger text-uppercase">
         prova
       </div> -->
-      <div class="col-12">
-        <h2 class="text-danger text-uppercase text-center py-4">Film</h2>
-      </div>
       <section>
         <div class="container-fluid p-5">
           <div class="row">
+            <div class="col-12">
+              <h2 class="text-danger text-uppercase p-4">Film</h2>
+            </div>
             <div class="col-12 text-white d-flex flex-wrap">
               <MainMovie
                 v-for="movie in moviesList"
@@ -21,12 +21,11 @@
                 :movieVote_average="movie.vote_average"
                 :movieCover="movie.backdrop_path"
                 :movieOverview="movie.overview"
+                :movieCoverPoster="movie.poster_path"
               />
             </div>
             <div class="col-12">
-              <h2 class="text-danger text-uppercase text-center py-4">
-                Serie Tv
-              </h2>
+              <h2 class="text-danger text-uppercase p-4">Serie Tv</h2>
             </div>
             <div
               class="col-12 text-white d-flex flex-wrap justify-content-center"
@@ -39,6 +38,7 @@
                 :tvOriginal_language="tv.original_language"
                 :tvVote_average="tv.vote_average"
                 :tvCover="tv.backdrop_path"
+                :tvCoverPoster="tv.poster_path"
                 :tvOverview="tv.overview"
               />
             </div>
