@@ -4,9 +4,9 @@
       <div class="row">
         <!-- <div class="col-12 text-danger">{{ searchAll }}</div> -->
         <div class="col-12 text-white">
-          <ul v-for="(list, index) in listFilm" :key="index">
+          <!--     <ul v-for="(list, index) in listFilm" :key="index">
             <li>{{ listFilm }}</li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
 </template> 
 
 <script>
-import axios from "axios";
+/* import axios from "axios"; */
 export default {
   name: "HomeMain",
 
@@ -27,7 +27,7 @@ export default {
     };
   },
   created() {
-    axios
+    /*  axios
       .get(`${this.apiList}=${this.searchFilm}`)
       .then((result) => {
         this.listFilm = result.data;
@@ -37,7 +37,7 @@ export default {
       })
       .catch((error) => {
         console.log(error);
-      });
+      }); */
   },
   methods: {},
   computed: {},

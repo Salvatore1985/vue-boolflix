@@ -6,7 +6,7 @@
           <div class="text-uppercase">
             <h1>boolflix</h1>
           </div>
-          <Search @search="getMovies" />
+          <Search @search="getSearch" />
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
 import Search from "./Search.vue";
 export default {
   name: "HomeHeader",
-  /*  props: ["inputSearch"], */
+
   components: {
     Search,
   },
@@ -29,8 +29,9 @@ export default {
   },
   created() {},
   methods: {
-    getMovies(query) {
-      console.log("Input/Button Search recuperato ", query);
+    getSearch(search) {
+      console.log("Input/Button Search recuperato ", search, " nell'Header");
+      this.$emit("search", search);
     },
   },
   computed: {},
