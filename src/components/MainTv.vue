@@ -17,7 +17,9 @@
       </div>
       <div class="overflow-auto">
         <ul>
-          <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
+          <li v-if="tvTitle !== tvOriginal_title">
+            <span class="text-danger">Tittolo: </span>{{ tvTitle }}
+          </li>
           <li>
             <span class="text-danger">Titolo Originale: </span
             >{{ tvOriginal_title }}
