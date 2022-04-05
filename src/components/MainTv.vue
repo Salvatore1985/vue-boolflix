@@ -8,14 +8,14 @@
       />
     </div>
     <section class="description w-100">
-      <div class="h-50">
+      <div class="">
         <img
           class="my-cover"
           :src="`https://image.tmdb.org/t/p/w342${tvCover}`"
           :alt="tvTitle"
         />
       </div>
-      <div class="h-50 overflow-auto">
+      <div class="overflow-auto">
         <ul>
           <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
           <li>

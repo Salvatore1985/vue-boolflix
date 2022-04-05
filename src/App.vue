@@ -8,7 +8,7 @@
       <section>
         <div class="container-fluid p-5">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 shadow">
               <h2 class="text-danger text-uppercase p-4">Film</h2>
             </div>
             <div class="col-12 text-white d-flex flex-wrap">
@@ -24,7 +24,7 @@
                 :movieCoverPoster="movie.poster_path"
               />
             </div>
-            <div class="col-12">
+            <div class="col-12 shadow">
               <h2 class="text-danger text-uppercase p-4">Serie Tv</h2>
             </div>
             <div
