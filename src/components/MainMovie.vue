@@ -33,7 +33,25 @@
             <span class="text-uppercase"> {{ movieOriginal_language }} </span>
           </li>
           <li>
-            <span class="text-danger">Voto: </span>{{ movieVote_average }}
+            <span class="text-danger">Voto: </span>
+
+            <span
+              v-for="(star, index) in getVotes(movieVote_average)"
+              :key="index"
+              ><font-awesome-icon
+                icon="fa-solid fa-star"
+                class="text-warning"
+              />
+            </span>
+            <span
+              v-for="(star, index) in 5 - getVotes(movieVote_average)"
+              :key="index"
+            >
+              <font-awesome-icon
+                icon="fa-regular fa-star"
+                class="text-warning"
+              />
+            </span>
           </li>
           <li>
             <span class="text-danger">Descrizione: </span>{{ movieOverview }}
@@ -62,7 +80,11 @@ export default {
     };
   },
   created() {},
-  methods: {},
+  methods: {
+    getVotes(vote) {
+      return Math.ceil(vote / 2);
+    },
+  },
   computed: {},
 };
 </script>
