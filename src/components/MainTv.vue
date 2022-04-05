@@ -19,7 +19,8 @@
         <ul>
           <li><span class="text-danger">Tittolo: </span>{{ tvTitle }}</li>
           <li>
-            <span class="text-danger">Titolo Originale: </span>{{ tvTitle }}
+            <span class="text-danger">Titolo Originale: </span
+            >{{ tvOriginal_title }}
           </li>
           <li v-if="tvOriginal_language !== 'en'">
             <span class="text-danger">Lingua: </span>
@@ -35,15 +36,17 @@
           <li>
             <span class="text-danger">Voto: </span>
 
-            <span v-for="(star, index) in getVotes(tvVote_average)" :key="index"
+            <span
+              v-for="star in getVotes(tvVote_average)"
+              :key="star + 'tv' + 'solid'"
               ><font-awesome-icon
                 icon="fa-solid fa-star"
                 class="text-warning"
               />
             </span>
             <span
-              v-for="(star, index) in 5 - getVotes(tvVote_average)"
-              :key="index"
+              v-for="star in 5 - getVotes(tvVote_average)"
+              :key="star + 'tv' + 'regular'"
             >
               <font-awesome-icon
                 icon="fa-regular fa-star"

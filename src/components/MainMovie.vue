@@ -19,7 +19,8 @@
         <ul>
           <li><span class="text-danger">Tittolo: </span>{{ movieTitle }}</li>
           <li>
-            <span class="text-danger">Titolo Originale: </span>{{ movieTitle }}
+            <span class="text-danger">Titolo Originale: </span
+            >{{ movieOriginal_title }}
           </li>
           <li v-if="movieOriginal_title !== 'en'">
             <span class="text-danger">Lingua: </span>
@@ -37,7 +38,7 @@
 
             <span
               v-for="(star, index) in getVotes(movieVote_average)"
-              :key="index"
+              :key="index + 'star' + 'solid'"
               ><font-awesome-icon
                 icon="fa-solid fa-star"
                 class="text-warning"
@@ -45,7 +46,7 @@
             </span>
             <span
               v-for="(star, index) in 5 - getVotes(movieVote_average)"
-              :key="index"
+              :key="index + 'star' + 'regular'"
             >
               <font-awesome-icon
                 icon="fa-regular fa-star"
