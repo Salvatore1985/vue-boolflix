@@ -34,9 +34,22 @@
           </li>
           <li>
             <span class="text-danger">Voto: </span>
-            {{ getVotes(tvVote_average) }} {{ tvVote_average }}
-            <font-awesome-icon icon="fa-solid fa-star" class="text-warning" />
-            <font-awesome-icon icon="fa-regular fa-star" class="text-warning" />
+
+            <span v-for="(star, index) in getVotes(tvVote_average)" :key="index"
+              ><font-awesome-icon
+                icon="fa-solid fa-star"
+                class="text-warning"
+              />
+            </span>
+            <span
+              v-for="(star, index) in 5 - getVotes(tvVote_average)"
+              :key="index"
+            >
+              <font-awesome-icon
+                icon="fa-regular fa-star"
+                class="text-warning"
+              />
+            </span>
           </li>
           <li>
             <span class="text-danger">Descrizione: </span>{{ tvOverview }}

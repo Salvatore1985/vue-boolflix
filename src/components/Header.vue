@@ -7,8 +7,9 @@
             <h1>boolflix</h1>
           </div>
           <ul class="d-flex">
-            <li class="px-5"><a class="text-danger" href="#film">Film</a></li>
-            <li><a class="text-danger" href="#serie">Serie Tv</a></li>
+            <li><a class="text-danger" href="#film">Film</a></li>
+            <li><a class="text-danger px-5" href="#serie">Serie Tv</a></li>
+            <li><a class="text-danger" href="#vote">I più votati</a></li>
           </ul>
           <Search @search="getSearch" />
         </div>
