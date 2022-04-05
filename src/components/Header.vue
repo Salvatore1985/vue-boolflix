@@ -1,11 +1,15 @@
 <template>
   <header>
     <div class="container">
-      <div class="row" id="row-header">
+      <div class="row text-uppercase" id="row-header">
         <div class="col-12 d-flex justify-content-between align-items-center">
           <div class="text-uppercase">
             <h1>boolflix</h1>
           </div>
+          <ul class="d-flex">
+            <li class="px-5"><a class="text-danger" href="#film">Film</a></li>
+            <li><a class="text-danger" href="#serie">Serie Tv</a></li>
+          </ul>
           <Search @search="getSearch" />
         </div>
       </div>

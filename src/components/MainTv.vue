@@ -32,7 +32,12 @@
             <span class="text-danger">Lingua: </span>
             <span class="text-uppercase"> {{ tvOriginal_language }} </span>
           </li>
-          <li><span class="text-danger">Voto: </span>{{ tvVote_average }}</li>
+          <li>
+            <span class="text-danger">Voto: </span>
+            {{ getVotes(tvVote_average) }} {{ tvVote_average }}
+            <font-awesome-icon icon="fa-solid fa-star" class="text-warning" />
+            <font-awesome-icon icon="fa-regular fa-star" class="text-warning" />
+          </li>
           <li>
             <span class="text-danger">Descrizione: </span>{{ tvOverview }}
           </li>
@@ -58,7 +63,11 @@ export default {
     return {};
   },
   created() {},
-  methods: {},
+  methods: {
+    getVotes(vote) {
+      return Math.ceil(vote / 2);
+    },
+  },
   computed: {},
 };
 </script>

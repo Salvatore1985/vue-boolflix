@@ -8,7 +8,7 @@
       <section>
         <div class="container-fluid p-5">
           <div class="row">
-            <div class="col-12 shadow">
+            <div class="col-12 shadow" id="film">
               <h2 class="text-danger text-uppercase p-4">Film</h2>
             </div>
             <div class="col-12 text-white d-flex flex-wrap">
@@ -24,8 +24,10 @@
                 :movieCoverPoster="movie.poster_path"
               />
             </div>
-            <div class="col-12 shadow">
-              <h2 class="text-danger text-uppercase p-4">Serie Tv</h2>
+            <div class="col-12 shadow" id="serie">
+              <h2 class="text-danger text-uppercase p-4">
+                Serie Tv <i class="fa-solid fa-star"></i>
+              </h2>
             </div>
             <div
               class="col-12 text-white d-flex flex-wrap justify-content-center"
@@ -54,6 +56,12 @@ import axios from "axios";
 import Header from "./components/Header.vue";
 import MainMovie from "./components/MainMovie.vue";
 import MainTv from "./components/MainTv.vue";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserSecret);
+
 export default {
   name: "App",
   components: {
