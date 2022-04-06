@@ -24,6 +24,7 @@ export default {
     emitSearch() {
       this.$emit("search", this.inputSearch);
       console.log("Input/Button Search, cliccato");
+      this.inputSearch = "";
     },
   },
   computed: {},
