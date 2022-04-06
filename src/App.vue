@@ -9,7 +9,12 @@
         <div class="container-fluid p-5">
           <div class="row">
             <div class="col-12 shadow" id="film">
-              <h2 class="text-danger text-uppercase p-4">Film</h2>
+              <h2 class="text-danger text-uppercase p-4">
+                Film
+                <span v-if="moviesList.length > 0"
+                  >Trovati {{ moviesList.length }}
+                </span>
+              </h2>
             </div>
             <div class="col-12 text-white d-flex flex-wrap">
               <MainMovie
@@ -26,7 +31,10 @@
             </div>
             <div class="col-12 shadow" id="serie">
               <h2 class="text-danger text-uppercase p-4">
-                Serie Tv <i class="fa-solid fa-star"></i>
+                Serie Tv
+                <span v-if="tvList.length > 0"
+                  >Trovati {{ tvList.length }}
+                </span>
               </h2>
             </div>
             <div
