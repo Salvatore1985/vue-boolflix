@@ -9,7 +9,9 @@
           <ul class="d-flex">
             <li><a class="text-danger" href="#film">Film</a></li>
             <li><a class="text-danger px-5" href="#serie">Serie Tv</a></li>
-            <li><a class="text-danger" href="#vote">I più votati</a></li>
+            <!-- <li>
+              <a class="text-danger " href="#vote">I più votati</a>
+            </li> -->
           </ul>
           <Search @search="getSearch" />
         </div>
